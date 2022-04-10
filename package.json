@@ -1,0 +1,17 @@
+{
+  "name": "buidl-store-backend",
+  "version": "1.0.0",
+  "description": "NFT marketplace and listing infrastructure for futuremodern coop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@tatumio/tatum": "^1.34.5",
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0"
+  }
+}
