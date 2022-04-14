@@ -9,6 +9,8 @@ let headers = {
     "x-testnet-type": "ethereum-rinkeby",
   }
 
+// Need API Documentation at top of document and clean up of function names.
+
 const CreateMarketplace = async (request) => {
   let response = await axios.post("https://api-eu1.tatum.io/v3/blockchain/marketplace/listing",request,{headers: headers})
   .then((res) => {
