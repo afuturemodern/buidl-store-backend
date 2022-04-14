@@ -1,7 +1,17 @@
-futuremodern's Buidl Store NFT Marketplace (backend, work in progress)
+# Backend NodeJS Server for Interacting with TatumJS REST API
 
-stack: Tatum Web3 API, started with this guide:
-https://docs.tatum.io/tutorials/how-to-create-a-peer-to-peer-nft-marketplace
+## Getting Started
+Install the dependencies for the project and review the Postman collection located here: [WIP]
 
-Marketplace Contract Address @ Rinkeby:
-`0x3c19844D53e1aC569C8c082E6c1BCec2D08FCE1D`
+## References
+- [Tatum REST API](https://tatum.io/api/v1/docs/)
+- [Tatum REST API](https://tatum.io/api/v1/docs/)
+
+## Contributors
+- thetwosents
+- streamerd
+
+## Testing coverage
+- [WIP]
+
+## Available API calls in Postman Collection
