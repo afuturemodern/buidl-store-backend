@@ -52,7 +52,7 @@ const ListArtwork = () => {
           chain: "ETH",
           tokenId: "1",
           listingId: "1",
-          price: "1",
+          price: "0.00083",
           isErc721: true,
           fee: {
               gasLimit: "380000",
@@ -132,7 +132,7 @@ const ListArtwork = () => {
           contractAddress: process.env.WETH_RINKEBY_CONTRACT_ADDRESS,
           spender: process.env.MARKETPLACE_CONTRACT_ADDRESS,
           chain: "ETH",
-          amount: "0.2",
+          amount: "0.000001",
           isErc721: true,
           fee: {
               gasLimit: "380000",
@@ -166,7 +166,7 @@ const ListArtwork = () => {
           contractAddress: process.env.MARKETPLACE_CONTRACT_ADDRESS,
           buyer: "0xF2Bb8DCD9c246c03a42b029942DDD92Dd0Ea2302",
           chain: "ETH",
-          amount: "1.2",
+          amount: "0.001", //sum
           listingId: "1",
           isErc721: true,
           fee: {
@@ -194,8 +194,8 @@ const ListArtwork = () => {
 
 
 
-// CreateMarketplace();
+//CreateMarketplace();
 //ListArtwork();
-// SendApproval();
+ //SendApproval();
 // ApproveSpendingAndCashback();
-PurchaseNFTFromListing();
+ PurchaseNFTFromListing();
