@@ -1,7 +1,9 @@
 const { 
-    CreateMarketplace, 
-    ListArtwork, 
-    SendApproval, 
-    ApproveSpendingAndCashback, 
-    PurchaseNFTFromListing 
-} = require('./marketplace'); 
+    ListArtwork,
+    GetListing,
+    AllListings,
+    ActiveListings,
+    MakeOffer,
+    AcceptOffer,
+    BuyNFT    
+    } = require('../marketplace'); 
