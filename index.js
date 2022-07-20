@@ -13,9 +13,23 @@ const { ListArtwork } = require("./marketplace");
 
 const { Artist } = require("./ArtistData");
 
+// app.get("/api/v1/data/artist/:artistName", async (req, res) => {
+//   console.log(`getting data for: ${req.params.artistName}`);
+//   const data = await getMetadata();
+//   res.send(data);
+// });
+
+
+// Get request
+app.get("/api/v1", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+
+// /api/v1/data/artist/afuturemodern
 app.get("/api/v1/data/artist/:artistName", async (req, res) => {
   console.log(`getting data for: ${req.params.artistName}`);
-  const data = await getMetadata();
+  const data = await Artist(req.params.artistName);
   res.send(data);
 });
 
@@ -24,11 +38,6 @@ app.get("/api/v1/data/artist/:artistName", async (req, res) => {
 //   const { address, status } = await getCurrentWalletConnected();
 //   return { address, status };
 // };
-
-// Get request
-app.get("/api/v1", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
 
 // app.get("/api/wallet/fetchConnected", async (_, res) => {
 //   const { address, status } = await fetchWallet();
@@ -56,12 +65,6 @@ app.get(
     res.send(id, receipt);
   }
 );
-
-app.get("/api/v1/data/artist/:artistName", async (req, res) => {
-  console.log(`getting data for: ${req.params.artistName}`);
-  const data = await Artist(req.params.artistName);
-  res.send(data);
-});
 
 // get metadata of an NFT with Alchemy SDK.
 app.get("/api/v1/metadata/NFT/:address/:tokenId", async (req, res) => {

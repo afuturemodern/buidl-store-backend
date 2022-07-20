@@ -9,12 +9,6 @@ const contract = sdk.getMarketplace(
   process.env.MARKETPLACE_CONTRACT_ADDRESS
 );
 
-let headers = {
-  "content-type": "application/json",
-  "x-api-key": process.env.TATUM_API_KEY,
-  "x-testnet-type": "ethereum-rinkeby",
-};
-
 // address of the contract the asset you want to list is on
 const ListArtwork = async (_contractAddress, _tokenId, _price) => {
   const listing = {
