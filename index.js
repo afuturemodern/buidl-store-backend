@@ -52,6 +52,7 @@ app.get("/api/v1/data/artist/:artistName", async (req, res) => {
 //   } catch (error) {console.log(error);}
 // });
 
+// eg. GET http://localhost:3000/api/v1/data/artist/afuturemodern
 app.get(
   "/api/v1/marketplace/listing/new/:contractAddress/:tokenId",
   async (req, res) => {
@@ -67,6 +68,7 @@ app.get(
 );
 
 // get metadata of an NFT with Alchemy SDK.
+// eg. GET http://localhost:3000/api/v1/metadata/NFT/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405/77001
 app.get("/api/v1/metadata/NFT/:address/:tokenId", async (req, res) => {
   console.log(`getting data for: ${req.params.address.toString()}`);
   const address = req.params.address.toString();
