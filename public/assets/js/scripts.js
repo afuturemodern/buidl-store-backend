@@ -1,5 +1,5 @@
-if( !window.fmbs ) {
-    window.fmbs = {};
+if (!window.fmbs) {
+  window.fmbs = {};
 }
 
 window.fmbs.galleryMarkup = `<div class="fmbs-gallery-grid-item">
@@ -9,21 +9,37 @@ window.fmbs.galleryMarkup = `<div class="fmbs-gallery-grid-item">
         <a class="fmbs-gallery-grid-item__more-link" href="javascript://">[more about the item]</a>
     </div>`;
 
+async function fetchArtistData(artistName) {
+  console.log(`fetching data for: ${artistName}`);
+  const data = await fetch(`/api/v1/data/artist/${artistName}`)
+    .then((res) => res.json())
+    .catch((error) => console.error("Error:", error));
+
+  const links =
+    //   console.log(`data: ${JSON.stringify(data[artistName])}`);
+    console.log(`address: ${data[artistName].address} \n`);
+  console.log(`links: ${JSON.stringify(data[artistName].links)}\n`);
+  console.log(`artworks: ${JSON.stringify(data[artistName].artworks)}\n`);
+
+  // const {address, links, artworks} = data[artistName];
+  // console.log(`address: ${address}\n, links: ${JSON.stringify(links)} \n, artworks: ${JSON.stringify(artworks)}`);
+}
+
 function initGallery() {
+  const galleryContainer = document.querySelector(".fmbs-gallery-grid");
 
-    const galleryContainer = document.querySelector( '.fmbs-gallery-grid' );
-    
-    if( galleryContainer ) {
-        let galleryContents = '';
+  if (galleryContainer) {
+    let galleryContents = "";
 
-        for( let i = 0; i < 9; i++ ) {
-            galleryContents += window.fmbs.galleryMarkup;
-        }
-
-        galleryContainer.classList.remove( 'fmbs-gallery--loading' );
-
-        galleryContainer.innerHTML = galleryContents;
+    for (let i = 0; i < 9; i++) {
+      galleryContents += window.fmbs.galleryMarkup;
     }
+
+    galleryContainer.classList.remove("fmbs-gallery--loading");
+
+    galleryContainer.innerHTML = galleryContents;
+  }
 }
 
 initGallery();
+fetchArtistData("afuturemodern");
