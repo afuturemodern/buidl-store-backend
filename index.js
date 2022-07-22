@@ -21,7 +21,7 @@ const { Artist } = require("./ArtistData");
 
 
 // Get request
-app.get("/api/v1", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
